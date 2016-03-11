@@ -1,0 +1,7 @@
+
+*.codekit
+
+README.html
+*.sublime-project
+
+*.sublime-workspace
