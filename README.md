@@ -4,4 +4,4 @@ CRN Tool is a simple Chrome extension for GSU students to save their course CRNs
 ![Preview](https://raw.githubusercontent.com/TheRealGitCub/crn-tool/master/preview.png)
 
 ## Download
-The latest release is available for download in the [Chrome Web Store](https://chrome.google.com/webstore/detail/bootswatch-previewer/jlmhopkiicfdiaghialcjleommnolkpl).
+The latest release is available for download in the [Chrome Web Store](https://chrome.google.com/webstore/detail/crn-tool/ohlknoaachkmihafcfnocmdjhafikmmo).
