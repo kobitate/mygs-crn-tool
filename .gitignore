@@ -11,3 +11,5 @@ Archive.zip
 main/min/background-min.js
 
 main/min/main-min.js
+
+*.css
