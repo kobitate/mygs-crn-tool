@@ -1,0 +1,97 @@
+@import "../globals.less";
+
+body {
+	font-family: 'Roboto', Helvetica, sans-serif;
+	color: @color-text-primary;
+	font-size: 14px;
+	background-color: @color-light-bg;
+}
+
+body,h1,h2,h3,h4,h5,p {
+	padding: 0;
+	margin: 0;
+}
+
+h1,h2,h3,h4,h5 {
+	font-weight: 300;
+}
+
+#head {
+	background-color: @color-primary;
+	.shadow(2);
+	width: 100%;
+	color: @color-icon;
+	font-size: 2em;
+	padding: 8vh 0;
+	h1,h2 {
+		padding-left: 32px;
+	}
+}
+
+.card {
+	p {
+		margin-bottom: 8px;
+	}
+}
+
+#setup {
+	.secondary {
+		margin: 0 8px;
+	}
+	.setup-step {
+		margin-bottom: 16px;
+		.setup-step-header {
+			margin-bottom: 8px;
+			.setup-step-num {
+				color: @color-icon;
+				border: solid 1px @color-accent;
+				color: @color-accent;
+				border-radius: 50%;
+				display: inline-block;
+				width: 16px;
+				height: 16px;
+				padding: 8px;
+				text-align: center;
+				margin-right: 8px;
+			}
+			.setup-step-title {
+				font-size: 1.1em;
+			}
+		}
+	}
+	
+}
+
+#add-crns {
+	#crn-add {
+		.shadow(1);
+		padding: 0;
+        display: inline-block;
+		input {
+			margin: 0;
+			padding: 8px;
+			display: inline-block;
+            border: 0;
+            width: 50px;
+            font-size: 0.7em;
+		}
+		.btn {
+			box-shadow: none;
+            margin:0;
+            padding: 7px;
+		}
+		input[type=number]::-webkit-inner-spin-button,
+		input[type=number]::-webkit-outer-spin-button {
+			-webkit-appearance: none;
+			margin: 0;
+		}
+	}
+	#clear-all {
+		margin-top: 4px;
+	}
+}
+
+.half {
+	width: 50%;
+	float: left;
+}
