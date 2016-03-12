@@ -12,4 +12,6 @@ main/min/background-min.js
 
 main/min/main-min.js
 
-*.css
+main/*.css
+install/*.css
+course-search/*.css
