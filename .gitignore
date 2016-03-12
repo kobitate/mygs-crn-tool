@@ -7,3 +7,7 @@ README.html
 *.sublime-workspace
 
 Archive.zip
+
+main/min/background-min.js
+
+main/min/main-min.js
