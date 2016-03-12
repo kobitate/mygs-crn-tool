@@ -3,10 +3,6 @@
 	"name": "CRN Tool",
 	"description": "Quickly copy your CRNs to register for classes at Georgia Southern University",
 	"version": "1.1.1",
-	"browser_action": {
-		"default_icon": "icons/letter-icon128.png",
-		"default_title": "Show CRN Tool"
-	},
 	"options_page": "install/index.html",
 	"content_scripts": [ {
 		 "matches": [ "https://wings.georgiasouthern.edu/*" ],
@@ -40,7 +36,8 @@
 	],
 	"web_accessible_resources": [
 		"lib/fonts/*",
-		"main/main.html"
+		"main/main.html",
+		"icons/*"
 	],
 	"icons": {
 		"128": "icons/icon128.png"

@@ -47,6 +47,14 @@ function loadWindow(show) {
 				handle: "#crn-navbar"
 			});
 			
+			$("#crn-tool-launch img").attr("src",
+				chrome.extension.getURL('icons/icon128.png')
+			);
+			
+			$("#crn-tool-launch").click(function() {
+				$("#crn-tool").toggleClass("show");
+			});
+			
 			$("#crn-options-launch").click(function() {
 				$(this).toggleClass("active");
 				$("#crn-options").toggleClass("active");
