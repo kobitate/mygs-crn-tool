@@ -2,7 +2,7 @@
 	"manifest_version": 2,
 	"name": "CRN Tool",
 	"description": "Quickly copy your CRNs to register for classes at Georgia Southern University",
-	"version": "1.1",
+	"version": "1.1.1",
 	"browser_action": {
 		"default_icon": "icons/letter-icon128.png",
 		"default_title": "Show CRN Tool"
