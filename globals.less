@@ -36,7 +36,9 @@
     opacity: 0;
     pointer-events: none;
     transform: scale(0.9) translateY(-8px);
-    transition: all .2s cubic-bezier(.55,0,.1,1);
+    &:not(.ui-draggable-dragging) {
+        transition: all .2s cubic-bezier(.55,0,.1,1);
+    }
 }
 
 .faded-in {
