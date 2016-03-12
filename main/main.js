@@ -13,6 +13,9 @@ function setSetting(setting, callback) {
 }
 
 function makeCRNButton(crn) {
+	if (crn === "") {
+		return false;
+	}
 	var htmlString = '' +
 		'<span class="btn crn-item" data-clipboard-text="'+ crn +'">' +
 			'<i class="zmdi zmdi-copy"></i>&nbsp;' +
