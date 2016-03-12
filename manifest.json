@@ -2,7 +2,7 @@
 	"manifest_version": 2,
 	"name": "CRN Tool",
 	"description": "Quickly copy your CRNs to register for classes at Georgia Southern University",
-	"version": "1.1.1",
+	"version": "1.1.2",
 	"options_page": "install/index.html",
 	"content_scripts": [ {
 		 "matches": [ "https://wings.georgiasouthern.edu/*" ],
