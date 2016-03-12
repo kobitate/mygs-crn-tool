@@ -1,4 +1,7 @@
-/* global chrome,Clipboard,console */
+/* global chrome,Clipboard */
+
+var clipboard;
+
 function getSetting(name, callback) {
 	chrome.storage.sync.get(name, function(data) {
 		callback(data);
@@ -7,6 +10,26 @@ function getSetting(name, callback) {
 
 function setSetting(setting, callback) {
 	chrome.storage.sync.set(setting, callback);
+}
+
+function makeCRNButton(crn) {
+	var htmlString = '' +
+		'<span class="btn crn-item" data-clipboard-text="'+ crn +'">' +
+			'<i class="zmdi zmdi-copy"></i>&nbsp;' +
+			'<span class="crn-num">'+ crn +'</span>' +
+		'</span>';
+	$("#crn-list").append(htmlString);
+}
+
+function createClipboard() {
+	clipboard = new Clipboard('.crn-item');
+	
+	clipboard.on("success", function(e){
+		$(e.trigger).addClass("copied");
+		window.setTimeout(function() {
+			$(e.trigger).removeClass("copied");
+		}, 550);
+	});
 }
 
 function loadWindow(show) {
@@ -40,22 +63,9 @@ function loadWindow(show) {
 				if (data.crns !== undefined) {
 					var crns = data.crns.split(",");
 					crns.forEach(function(crn) {
-						var htmlString = '' +
-							'<span class="btn crn-item" data-clipboard-text="'+ crn +'">' +
-								'<i class="zmdi zmdi-copy"></i>&nbsp;' +
-								'<span class="crn-num">'+ crn +'</span>' +
-							'</span>';
-						$("#crn-list").append(htmlString);
+						makeCRNButton(crn);
 					});
-					
-					var clipboard = new Clipboard('.crn-item:not(#crn-add)');
-					
-					clipboard.on("success", function(e){
-						$(e.trigger).addClass("copied");
-						window.setTimeout(function() {
-							$(e.trigger).removeClass("copied");
-						}, 550);
-					});
+					createClipboard();
 				}
 			});
 			
@@ -76,14 +86,14 @@ function loadWindow(show) {
 					setSetting({
 						crns: newCRNString
 					}, function() {
-						loadWindow(true);
+						makeCRNButton($("#crn-add input").val());
+						$("#crn-add input").val('');
+						clipboard.destroy();
+						createClipboard();
 					});
 				});
 			});
 		}
-	});
-	getSetting("crns",function(data) {
-		console.log(data);
 	});
 }
 
