@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CRN Tool</title>
+	<link rel="stylesheet" href="../lib/material-design-iconic-font.css">
+	<link rel="stylesheet" href="install.css">
+	<script src="../lib/jquery-2.1.4.min.js"></script>
+	<script src="install.js"></script>
+</head>
+<body>
+	
+	<div class="dialog-outer" id="dialog-confirm-crn-clear">
+		<div class="dialog">
+			<div class="dialog-message">
+				Are you sure you want to clear all of your saved CRNs? This action
+				cannot be undone!
+			</div>
+			<div class="dialog-footer text-right">
+				<div class="btn btn-white dialog-no">Cancel</div>
+				<div class="btn dialog-yes">Clear All</div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="head">
+		<h2>Thank You for Installing</h2>
+		<h1>CRN Tool</h1>
+	</div>
+	
+	<div class="half">
+		
+		<div class="card" id="setup">
+			<h3>Setup</h3>
+			
+			<div class="setup-step">
+				<div class="setup-step-header">
+					<span class="setup-step-num">1</span>
+					<span class="setup-step-title">Add CRNs</span>
+				</div>
+				
+				<p>Add your CRNs for the classes you plan to register for by visiting
+				the Georgia Southern Course Search page or by adding them to the right of this message.</p>
+				
+				<a class="btn" href="http://my.georgiasouthern.edu/courses" target="_blank">
+					Open Course Search
+				</a>
+				<span class="secondary">&nbsp;or Add CRNs Manually</span>
+				
+			</div>
+			
+			<div class="setup-step">
+				<div class="setup-step-header">
+					<span class="setup-step-num">2</span>
+					<span class="setup-step-title">Verify</span>
+				</div>
+				<p>Make sure that CRN Tool loads inside WINGS when you open the site
+					and click the "C" icon in your address bar. Not working?
+					Contact me below, and I'll help get you set up.</p>
+				<a class="btn" href="http://twitter.com/notmadeofbeef"><i class="zmdi zmdi-twitter"></i> @notmadeofbeef</a>
+				<a class="btn" href="mailto:kobi@kobitate.com"><i class="zmdi zmdi-email"></i> kobi@kobitate.com</a>
+			</div>
+			
+			<div class="setup-step">
+				<div class="setup-step-header">
+					<span class="setup-step-num">3</span>
+					<span class="setup-step-title">You're Done!</span>
+				</div>
+				<p>Get ready to register! Set your alarm, make sure your laptop
+					is charged, and get ready to paste in those CRNs using CRN Tool!</p>
+			</div>
+			
+		</div>
+		
+	</div>
+	
+	<div class="right half">
+		<div class="card" id="add-crns">
+			<h3>Manage CRNs</h3>
+			<p>
+				<p>
+					Add a CRN using the textbox below. Once you've added a CRN, you can
+					delete it by clicking the button.
+				</p>
+				<div id="crn-list"></div>
+				<div id="crn-add">
+					<input type="number" placeholder="New CRN">
+					<div class="btn" id="add-submit"><i class="zmdi zmdi-plus"></i></div>
+				</div>
+				<div class="btn btn-white pull-right" id="clear-all"><i class="zmdi zmdi-delete"></i> Clear All</div>
+			</p>
+		</div>
+		<div class="card">
+			<h3>Adding CRNs from Course Search</h3>
+			<p>
+				If you have not found your classes yet, you can quickly save
+				the CRNs from your courses directly from GSU's Course Search page!
+				Simply click the Plus button either in the search results page or
+				in a course summary page.
+			</p>
+			<p>
+				Items colored green have already been added to your list.
+			</p>
+			
+			<img src="cs-screenshot.png">
+			
+		</div>
+	</div>
+	
+	
+</body>
+</html>
