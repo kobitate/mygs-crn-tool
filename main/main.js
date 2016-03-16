@@ -51,6 +51,9 @@ function loadWindow(show) {
 				handle: "#crn-statusbar"
 			});
 			
+			var settingURL = chrome.extension.getURL("install/index.html");
+			$("#crn-settings-link a").attr("href", settingURL);
+			
 			$("#crn-tool-launch img").attr("src",
 				chrome.extension.getURL('icons/icon128.png')
 			);
