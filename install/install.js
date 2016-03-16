@@ -16,33 +16,36 @@ function makeCRNButton(crn) {
 	}
 	var htmlString = '' +
 		'<span class="btn crn-item" data-crn="'+ crn +'">' +
-			'<i class="zmdi zmdi-delete"></i>&nbsp;' +
-			'<span class="crn-num">'+ crn +'</span>' +
+			'<input type="checkbox" name="select-crn" id="select-crn-'+crn+'" />&nbsp;' +
+			'<label for="select-crn-'+crn+'"><span class="crn-num">'+ crn +'</span></label>' +
 		'</span>';
 	$("#crn-list").append(htmlString);
 }
 
-function crnItemClick() {
-	$(".crn-item").unbind("click");
-	$(".crn-item").click(function() {
-		var removeCRN = $(this).data("crn");
-		var theButton = $(this);
-		getSetting("crns", function(data) {
-			if (data.crns !== undefined) {
-				var currentCRNs = data.crns.split(",");
-				var itemIndex = currentCRNs.indexOf(removeCRN + "");
+function deleteCRNs(toDelete) {
+	if (!(toDelete instanceof Array)) {
+		toDelete = toDelete.split(",");
+	}
+	getSetting("crns", function(data) {
+		if (data.crns !== undefined) {
+		var currentCRNs = data.crns.split(",");
+		var buttonsToRemove = [];
+			toDelete.forEach(function(deleteCRN){
+				var itemIndex = currentCRNs.indexOf(deleteCRN + "");
 				if (itemIndex > -1) {
 					currentCRNs.splice(itemIndex, 1);
+					buttonsToRemove.push($(".crn-item[data-crn=" + deleteCRN + "]"));
 				}
 				var newCRNs = currentCRNs.join();
 				setSetting({
 					crns: newCRNs
-				}, function() {
-					crnItemClick();
-					theButton.remove();
+				},function(){
+					buttonsToRemove.forEach(function(btn) {
+						btn.remove();
+					});
 				});
-			}
-		});
+			});
+		}
 	});
 }
 
@@ -53,7 +56,6 @@ $(document).ready(function() {
 			crns.forEach(function(crn) {
 				makeCRNButton(crn);
 			});
-			crnItemClick();
 		}
 	});
 	$("#add-submit").click(function(){
@@ -75,20 +77,19 @@ $(document).ready(function() {
 			}, function() {
 				makeCRNButton($("#crn-add input").val());
 				$("#crn-add input").val('');
-				crnItemClick();
 			});
 		});
 	});
-	$("#clear-all").click(function() {
-		$("#dialog-confirm-crn-clear").addClass("show");
-	});
-	$("#dialog-confirm-crn-clear .dialog-yes").click(function() {
-		chrome.storage.sync.clear(function(){
-			$("#crn-list").empty();
-			$("#dialog-confirm-crn-clear").removeClass("show");
+	$("#delete-selected").click(function(){
+		var toDelete = [];
+		$("#add-crns input:checked").each(function(){
+			toDelete.push($(this).closest(".crn-item").data("crn") + "");
 		});
+		deleteCRNs(toDelete);
 	});
-	$("#dialog-confirm-crn-clear .dialog-no").click(function() {
-		$("#dialog-confirm-crn-clear").removeClass("show");
+	$("#select-all").click(function() {
+		$("#add-crns input").not(":checked").each(function(){
+			$(this).prop('checked', true);
+		});
 	});
 });
