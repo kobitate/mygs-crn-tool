@@ -29,9 +29,13 @@ function createClipboard() {
 	
 	clipboard.on("success", function(e){
 		$(e.trigger).addClass("copied");
+		$("#toast-copied").addClass("show");
 		window.setTimeout(function() {
 			$(e.trigger).removeClass("copied");
 		}, 550);
+		window.setTimeout(function() {
+			$("#toast-copied").removeClass("show");
+		}, 1000);
 	});
 }
 
