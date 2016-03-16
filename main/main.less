@@ -16,48 +16,59 @@
     }
 }
 
-#crn-navbar {
+#crn-navbar-outer {
 	background: @color-primary;
-	color: @color-icon;
-	padding: 16px;
-	.shadow(1);
-    
-    #crn-options-launch {
-        padding: 8px 14px;
-        margin-top:-8px;
-        margin-right: -8px;
-        transition: all .1s cubic-bezier(.55,0,.1,1);
-        &.active {
-            background-color: @color-primary-dark;
-        }
-    }
-    
-    ul#crn-options {
-        .shadow(2);
-        position: absolute;
-        list-style: none;
-        background-color: @color-icon;
-        color: @color-text-secondary;
-        padding: 0;
-        right: 8px;
-        .faded-out;
-        &.active {
-            .faded-in;
-        }
-        li {
-            padding: 8px 16px;
-            border-bottom: solid 1px @color-divider;
-            cursor: pointer;
-            &:last-child {
-                border-bottom: none;
-            }
-            &:hover {
-                background-color: #ededed;
-            }
-        }
-    }
-    
-}
+	#crn-statusbar {
+		background: @color-primary-dark;
+		text-align: right;
+		color: white;
+		padding: 3px 5px;
+		font-size: .8em;
+	}
+	#crn-navbar {
+		color: @color-icon;
+		padding: 12px 16px;
+		.shadow(1);
+	    
+	    #crn-options-launch {
+	        padding: 8px 14px;
+	        margin-top:-8px;
+	        margin-right: -8px;
+	        transition: all .1s cubic-bezier(.55,0,.1,1);
+	        &.active {
+	            background-color: @color-primary-dark;
+	        }
+	    }
+	    
+	    ul#crn-options {
+	        .shadow(2);
+	        position: absolute;
+	        list-style: none;
+	        background-color: @color-icon;
+	        color: @color-text-secondary;
+	        padding: 0;
+	        right: 8px;
+			margin-top: 7px;
+	        .faded-out;
+	        &.active {
+	            .faded-in;
+	        }
+	        li {
+	            padding: 8px 16px;
+	            border-bottom: solid 1px @color-divider;
+	            cursor: pointer;
+	            &:last-child {
+	                border-bottom: none;
+	            }
+	            &:hover {
+	                background-color: #ededed;
+	            }
+	        }
+	    }
+	    
+	}
+
+	}
 
 #crn-tool-inner {
 	padding: 16px;

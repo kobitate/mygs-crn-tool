@@ -48,14 +48,14 @@ function loadWindow(show) {
 		success: function(data) {
 			$("body").append(data);
 			$("#crn-tool").draggable({
-				handle: "#crn-navbar"
+				handle: "#crn-statusbar"
 			});
 			
 			$("#crn-tool-launch img").attr("src",
 				chrome.extension.getURL('icons/icon128.png')
 			);
 			
-			$("#crn-tool-launch").click(function() {
+			$("#crn-tool-launch,#crn-close").click(function() {
 				$("#crn-tool").toggleClass("show");
 			});
 			
