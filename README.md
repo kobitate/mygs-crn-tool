@@ -1,5 +1,6 @@
 # CRN Tool for Georgia Southern University  
-CRN Tool is a simple Chrome extension for GSU students to save their course CRNs for quick access during the registration rush.
+CRN Tool is a simple Chrome extension for GSU students to save their course CRNs for quick access during the registration rush.  
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/ohlknoaachkmihafcfnocmdjhafikmmo.svg?maxAge=2592000)](https://chrome.google.com/webstore/detail/crn-tool/ohlknoaachkmihafcfnocmdjhafikmmo?authuser=0)
 
 ![Preview](https://raw.githubusercontent.com/TheRealGitCub/crn-tool/master/preview.png)
 
